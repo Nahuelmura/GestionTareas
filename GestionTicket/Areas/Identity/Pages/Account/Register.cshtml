@@ -1,0 +1,41 @@
+﻿@page
+@model RegisterModel
+
+
+
+<div class="row">
+    <div class="col-md-3 Registro  "> 
+         <h2 class="textoregistro">Crea un Nuevo Usuario</h2>
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+          
+            <hr  class="hrclas"/>
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Email">Email/Correo</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.Password">Contraseña</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary"> Crea tu cuenta</button>
+        </form>
+              
+                <a class=" href_registro" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">¿Ya estas logeado? Ingresa por aca </a>
+
+                <h1 class="titulo_Gestion">Gestión Tickets</h1>
+    </div>
+<div class="Imagen_registro col-md-8 contenedor_imagen">
+ 
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

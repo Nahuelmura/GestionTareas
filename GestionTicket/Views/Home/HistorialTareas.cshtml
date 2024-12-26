@@ -1,0 +1,106 @@
+@{
+  ViewData["Title"] = "Historial Tareas";
+}
+
+<div class="card">
+  <div class="card-body row">
+
+    <div class="mb-3 col-md-3">
+      <label for="TipoTareaID" class="form-label texto-input">Tipo Tarea</label>
+      @Html.DropDownList("TipoTareaBuscarID", null, htmlAttributes:
+             new
+             {
+               @class = "form-control",
+               @onchange = "ListadoTodasTareas()"
+
+             })
+    </div>
+
+    <div class="mb-3 col-md-3">
+      <label for="TipoSistemaID" class="form-label texto-input"> Sistema</label>
+      @Html.DropDownList("TipoSistemaBuscarID", null, htmlAttributes:
+             new
+             {
+               @class = "form-control",
+               @onchange = "ListadoTodasTareas()"
+
+             })
+    </div>
+    <div class="mb-3 col-md-3">
+      <label for="fechaDesdeBuscar" class="form-label texto-input">Fecha Desde</label>
+      <input type="datetime-local" class="form-control" id="fechaDesdeBuscar" onchange="ListadoTodasTareas()">
+    </div>
+    <div class="mb-3 col-md-3">
+      <label for="fechaHastaBuscar" class="form-label texto-input">Fecha Hasta</label>
+      <input type="datetime-local" class="form-control" id="fechaHastaBuscar" onchange="ListadoTodasTareas()">
+    </div>
+
+    <div class="d-flex">
+      <div class="d-flex align-items-center me-3">
+        <input type="checkbox" class="form-check-input me-2" id="todasTareas" onchange="ListadoTodasTareas()">
+        <label for="todasTareas" class="form-check-label texto-input">Todas las tareas</label>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <input type="checkbox" class="form-check-input me-2" id="tareasFinalizadas" onchange="ListadoTodasTareas()">
+        <label for="tareasFinalizadas" class="form-check-label texto-input">Finalizadas</label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card mt-2">
+  <div class="card-header">
+    <h4>Historial de Tareas</h4>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive" style="max-height: 80vh; overflow-y: auto;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tipo de Tarea</th>
+            <th scope="col">Sistema</th>
+            <th scope="col">Título</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Inicio</th>
+            <th scope="col">Cierre</th>
+            <th scope="col">Estimado</th>
+            <th scope="col">Observaciones</th>
+            <th scope="col">Finalizada</th>
+          </tr>
+        </thead>
+        <tbody id="historialTareas">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+@* <div>
+<h1 class="text-center my-4">Todas las tareas del sistema </h1>
+<div id="TareaContainer"</div>
+</div>
+</div>
+
+
+<div class="modal fade" id="DetalleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title fs-5" id="exampleModalLabel">Detalles de la Tarea</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<div id="Detalle" class="card-container"></div> <!-- Aquí se mostrarán las tarjetas dinámicamente -->
+</div>
+</div>
+</div>
+</div> *@
+
+
+
+@section Scripts {
+  <script src="~/js/historialTareas.js"></script>
+}

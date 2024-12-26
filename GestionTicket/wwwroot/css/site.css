@@ -1,0 +1,149 @@
+/* @media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+} */
+
+/* Boton crear tarea inicio */
+/* .fondo {
+
+  background-color: #f8f9fa; 
+} */
+
+/* .fondo {
+  background-image: url("/lib/Img/fondo_png.png");
+  background-size: cover;
+  z-index: -1;
+} */
+
+/* boton */
+.titulo_home {
+  font-size: 1.5em;
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: 2px 1px 1px #6db1e9;
+
+}
+
+.spanError {
+  color: red;
+}
+
+.titulo_home:hover:hover {
+  color: #008cff;
+  background: #008cff;
+  border: #008cff;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+/* titulo de la lista */
+
+.titulo_Listado {
+  font-size: 2.3em;
+  color: #008cff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  padding-top: 1.5em;
+
+}
+
+/* navbar */
+
+.TextoNavbar {
+  font-size: 1em;
+}
+
+.TextoNavbar:hover:hover {
+  color: #ffffff;
+  background: #008cff;
+  border: #008cff;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+/* tabla */
+.th_tabla {
+  background-color: #008cff;
+  color: #008cff;
+}
+
+
+/* modal */
+
+.Titulo_modal {
+
+  padding-left: 7em;
+}
+
+
+.imagen_modal {
+  background-image: url("/lib/Img/fondo_png.png");
+}
+
+.Card_tamaño {
+  width: 26em;
+  height: 15em;
+}
+
+
+.divSubtarea {
+  background-color: rgb(241, 237, 237);
+  margin: 5px 15px;
+  padding: 1px 1px 1px 10px;
+  color: grey;
+  border-radius: 15px;
+  height: 5vh;
+
+}
+
+
+/* tamaño boton de las card  */
+.tamaño_boton {
+  height: 2em;
+  text-align: center;
+  color: blue;
+  border: 1px solid #0346fa;
+}
+
+
+
+
+/* card media para pantallas moviles desde inicio 300 px */
+
+.Card_tamaño {
+  min-width: 300px; 
+  max-width: 100%; 
+}
+
+@media (max-width: 576px) {
+  .Card_tamaño {
+      width: 100%; 
+      min-width: 300px;
+  }
+
+  .tamaño_boton {
+      font-size: 0.8em; 
+      padding: 5px 10px; 
+  }
+
+  .card-header {
+      font-size: 1em; 
+  }
+
+  .card {
+      margin-bottom: 10px; 
+  }
+}
+

@@ -1,0 +1,97 @@
+@{
+  ViewData["Title"] = "Tipos Tareas";
+}
+
+<h1 class="mb-4">Tipos de Tarea</h1>
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fa-solid fa-file-circle-plus"></i> Agregar tipo de tarea</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                  <input type="hidden" id="tipoID" value="0"/>
+
+                  <div>
+                    <input type="text" class="form-control" id="nombreTipo" placeholder="Nombre:" style="text-transform: uppercase;" required>
+                    <span class="spanError animate__animated animate__fadeIn" style="display: none;" id="nombreTipoError"><i class="fa-solid fa-circle-exclamation errorIcon"></i> Ingresar nombre</span>
+                  </div>
+
+                  <div class="form-check mt-3 mx-1">
+                    <input class="form-check-input" type="checkbox" value="" id="tareaSimple">
+                    <label class="form-check-label" for="tareaSimple">
+                      Tarea simple
+                    </label>
+                  </div>
+
+                </form>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="button" class="btn btn-primary" onclick="crearTipoTarea()"><i class="fa-regular fa-floppy-disk"></i> Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fa-solid fa-rectangle-list"></i> Listado</h5>
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-dark btn-sm mb-3" onclick="listaTipoTareas()"><i class="fa-solid fa-rotate"></i> Recargar</button>
+              <table class="table">
+                  <thead>
+                      <tr>
+                      <th class="thTabla">Tipo de Tarea</th>
+                      <th></th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbody-listaTareas"></tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalTipoTarea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalTitulo"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <input type="hidden" id="tipoTareaEditarID" value="0"/>
+            <div class="mb-3 col-12">
+              <label for="nombreTipoEditar" class="form-label">Nombre tipo de tarea:</label>
+              <input type="text" class="form-control" id="nombreTipoEditar" placeholder="Nombre:" style="text-transform: uppercase;" required>
+              <span class="spanError animate__animated animate__fadeIn" style="display: none;" id="nombreTipoErrorEdit"><i class="fa-solid fa-circle-exclamation errorIcon"></i> Ingresar nombre</span>
+            </div>
+          </div>
+
+          <div class="form-check mt-3 mx-1">
+            <input class="form-check-input" type="checkbox" value="" id="tareaSimpleEditar">
+            <label class="form-check-label" for="tareaSimple">
+              Tarea simple
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="limpiarCampos()" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" onclick="editarTarea()" class="btn btn-primary"><i
+                        class="fa-regular fa-floppy-disk"></i> Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts{
+  <script src="~/js/tipoTarea.js"></script>
+}
